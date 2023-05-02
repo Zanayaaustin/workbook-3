@@ -1,0 +1,2 @@
+let dayNum 
+let day 

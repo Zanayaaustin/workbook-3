@@ -16,7 +16,7 @@ let basketball = "basketball";
 function shoot(ball) {
     console.log("Score! 3-pointer.");
 }else{
-    console.log("You lose");
+    console.log(:fail, no score);
 }
 
 
