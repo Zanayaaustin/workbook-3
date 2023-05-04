@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Off By 1Website</title>
+</head>
+<body>
+    <header></header>
+
+    <main>
+   <input type="date" name="myDate" id="myDate">
+   <button onclick="handleClick();"> Submit </button>
+   <p id= "messageParagraph"></p>
+   
+
+
+    </main>
+
+    <script>
+     function handleClick(){
+       const theDate = document.getElementById("theDate");
+       const message = document.getElementById("messageParagraph");
+       const dateBtn = document.getElementById("dateBtn");
+       
+       let date = theDate.value
+       let date = new Date()
+       message.innerText = `the date is ${date.toString}`;
+       
+       
+     }
+    
+    </script>
+</body>
+</html>
