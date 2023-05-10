@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACME Car Rental</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+</head>
+<body>
+          <h1>ACME Car Rental</h1>
+    
+    <table>
+        <tr>
+            <td>
+                Pickup Date : <input type="Pickup Date" name="Pickup Date">
+            </td>
+           
+        </tr>
+        <tr>
+          <td>
+            Number of Days :
+            <input type="Number of Days" name="Number of Days">
+
+        </td>
+
+            
+        
+        </tr>
+    </table>
+    
+    
+    <main class="container">
+        <fieldset>
+            <legend> Options:<legend>
+                    <input type="checkbox" id="tollTag" name="tollTag" value="tolltag" checked> Electronic Toll Tag
+                    ($3.95/day)<br>
+                    <input type="checkbox" id="gps" name="gps" value="gls"> GPS ($2.95/day)<br>
+                    <input type="checkbox" id="roadside" name="roadside" value="roadside"> Roadside Assistance
+                    ($2.95/day)<br>
+                    <br>
+                    <div id="wrapper">
+                        <label for="yes_no_radio">Under 25</label>
+                        
+                        <input type="radio" name="yes_no" checked>Yes
+                        
+            
+                         <input type="radio" name="yes_no">No
+                    </div>
+                    <br>
+                    <button onclick="calculateExtraCost();">Estimate Total Cost</button>
+        </fieldset>
+        <p id="resultParagraph"></p>
+
+        
+    </main>
+    <script>
+
+        function calculateExtraCost() {
+            let extraPerDay = 0;
+            let tollTag = document.getElementById("tollTag").checked;
+            if (tollTag == true) {
+                extraPerDay += 3.95;
+            }
+            let gps = document.getElementById("gps").checked;
+            if (gps == true) {
+                extraPerDay += 4.95;
+            }
+            let roadside = document.getElementById("roadside").checked;
+            if (roadside == true) {
+                extraPerDay += 2.95;
+            }
+            document.getElementById("resultParagraph").innerText = extraPerDay;
+        }
+        function estimateCost() {
+            let totalCost = 0;
+            let basicCarRentalCost = 29.99;
+            let numberOfDaysInput = document.getElementById("numberOfDays")
+            let numberOfDays = Number(numberOfDaysInput.value);
+            
+            let selectedAge = 
+                document.querySelector("input[name='ageCheck']:checked");
+            let ageCheckMultiplier = 1;
+
+            if (selectedAge) {
+                 ageCheckMultiplier = Number(selectedAge.value);
+
+            } else{
+                document.getElementById("resultParagraph").innerText = "Are you under 25?"
+                return
+            }
+            
+            basicCarRentalCost = basicCarRentalCost * ageCheckMultiplier;
+            totalCost = basicCarRentalCost * numberOfDays; 
+
+            let tollTag = document.getElementById("tollTag").checked;
+            if (tollTag == true) {
+                totalCost += 3.95;
+            }
+            let gps = document.getElementById("gps").checked;
+            if (gps == true) {
+                totalCost += 4.95;
+            }
+            let roadside = document.getElementById("roadside").checked;
+            if (roadside == true) {
+                totalCost += 2.95;
+            }
+            document.getElementById("resultParagraph").innerText = "Total Due: $" + totalCost.toFixed(2);
+        }
+        
+
+    </script>
+    
+</body>
+</html>

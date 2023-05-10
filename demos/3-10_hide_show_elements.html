@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide and Show Elements</title>
+</head>
+<body>
+    <main class="container">
+    <input type="checkbox"name="showCheckbox" id="showCheckbox">
+    <label for="showCheckbox">Show Something</label>
+    <section id="detailsSection">
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores distinctio maiores alias accusamus error. Suscipit similique veniam, ad dolorem at incidunt rerum cum? Fuga, cupiditate iure voluptas quam omnis ipsa?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis, repellendus maxime eaque nam quasi, dolorum minus tempora enim perspiciatis vel dolorem saepe perferendis placeat excepturi, ea quis aspernatur beatae!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis, repellendus maxime eaque nam quasi, dolorum minus tempora enim perspiciatis vel dolorem saepe perferendis placeat excepturi, ea quis aspernatur beatae!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis, repellendus maxime eaque nam quasi, dolorum minus tempora enim perspiciatis vel dolorem saepe perferendis placeat excepturi, ea quis aspernatur beatae!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis, repellendus maxime eaque nam quasi, dolorum minus tempora enim perspiciatis vel dolorem saepe perferendis placeat excepturi, ea quis aspernatur beatae!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis, repellendus maxime eaque nam quasi, dolorum minus tempora enim perspiciatis vel dolorem saepe perferendis placeat excepturi, ea quis aspernatur beatae!</p>
+        </section>/#detailsSection
+       </main>/.container
+     <script>
+      function hideOrShowDetails () {
+        const detailsSection = document.getElementById("detailsSection");
+        if(showCheckbox.checked) {           
+            detailsSection.style.display="block";
+        }
+        detailsSection.style.display="block";
+      }
+
+     </script>
+
+</body>
+
+</html>
